@@ -1,0 +1,169 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal que organiza el conversor y la sección de cotizaciones */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Espaciado entre los elementos */
+    width: 90%;
+    max-width: 900px; /* Evita que se estire demasiado en pantallas grandes */
+}
+
+/* Caja del conversor */
+.converter {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Inputs y selects */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botón de convertir */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Resultado */
+#result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estilos para los selectores con banderas */
+.currency-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.flag {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Loader animado */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Contenedor del ticker */
+.ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background: #0a3006;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Animación del ticker */
+.ticker {
+    white-space: nowrap;
+    display: inline-block;
+    animation: scrollTicker 60s linear infinite;
+}
+
+@keyframes scrollTicker {
+    from { transform: translateX(10%); }
+    to { transform: translateX(-10%); }
+}
+
+/* Estilos para la sección de cotizaciones */
+.exchange-rates {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: left;
+}
+
+.exchange-rates h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.exchange-rates ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.exchange-rates li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE: en pantallas pequeñas, cambiar a columna */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .converter,
+    .exchange-rates {
+        max-width: 100%;
+    }
+}
